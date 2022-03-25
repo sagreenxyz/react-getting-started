@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-      Hello World!
+      {Math.random()}
   </React.StrictMode>,
   document.getElementById('root')
 );
