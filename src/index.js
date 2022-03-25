@@ -39,7 +39,9 @@ const StarMatch = () => {
   const [candidateNums, setCandidateNums] = useState([])
   const [secondsLeft, setSecondsLeft] = useState(10)
   useEffect(() => {
-    console.log('Rendered...')
+    setTimeout(() => {
+      setSecondsLeft(secondsLeft - 1)
+    }, 1000)
   })
 
   const candidatesAreWrong = utils.sum(candidateNums) > stars
