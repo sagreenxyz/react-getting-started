@@ -25,6 +25,14 @@ const PlayNumber = (props) => {
   )
 }
 
+const PlayAgain = (props) => {
+  return (
+    <div className="game-done">
+      <button>Play Again</button>
+    </div>
+  )
+}
+
 const StarMatch = () => {
   const [stars, setStars] = useState(utils.random(1, 9))
   const [availableNums, setAvailableNums] = useState(utils.range(1, 9))
