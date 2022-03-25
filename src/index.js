@@ -3,6 +3,16 @@ import ReactDOM from 'react-dom';
 import utils from './utils.js'
 import colors from './config.js'
 
+const StarsDisplay = (props) => {
+  return (
+    <>
+      {utils.range(1, props.count).map(starId => {
+        return <div key={starId} className="star" />
+      })}
+    </>
+  )
+}
+
 const PlayNumber = (props) => {
   return <button className="number" onClick={() => console.log('PlayNumber', props.number)}>
     {props.number}
@@ -18,9 +28,7 @@ const StarMatch = () => {
       </div>
       <div className="body">
         <div className="left">
-          {utils.range(1, stars).map(starId => {
-            return <div key={starId} className="star" />
-          })}
+          <StarsDisplay count={stars} />
         </div>
         <div className="right">
           {utils.range(1, 9).map(number => {
