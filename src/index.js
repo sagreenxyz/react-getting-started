@@ -46,14 +46,17 @@ const StarMatch = () => {
     if (currentStatus == 'used') {
       return
     }
-    const newCandidateNums = candidateNums.concat(number)
+    const newCandidateNums =
+      currentStatus === 'available'
+        ? candidateNums.concat(number)
+        : candidateNums.filter(cn => cn !== number)
     if (utils.sum(newCandidateNums) !== stars) {
       setCandidateNums(newCandidateNums)
     } else {
       const newAvailableNums = availableNums.filter(
         n => !newCandidateNums.includes(n)
       )
-      // redraw numbe of stars (from what is available)
+      setStars(utils.randomSumIn(newAvailableNums, 9))
       setAvailableNums(newAvailableNums)
       setCandidateNums([])
     }
