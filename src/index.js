@@ -28,6 +28,17 @@ const StarMatch = () => {
   const [stars, setStars] = useState(utils.random(1, 9))
   const [availableNums, setAvailableNums] = useState([1, 2, 3, 4, 5])
   const [candidateNums, setCandidateNums] = useState([2, 3])
+
+  const numberStatus = (number) => {
+    if (!availableNums.includes(number)) {
+      return 'used'
+    }
+    if (candidateNums.includes(number)) {
+      return ....
+    }
+    return 'available'
+  }
+
   return (
     <div className="game">
       <div className="help">
@@ -42,6 +53,7 @@ const StarMatch = () => {
             return (
               <PlayNumber
                 key={number}
+                status={numberStatus(number)}
                 number={number}
               />
             )
