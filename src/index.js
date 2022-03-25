@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import utils from './utils.js'
 import colors from './config.js'
 
-const Number = (props) => {
+const PlayNumber = (props) => {
   return <button className="number">{props.number}</button>
 }
 
@@ -22,7 +22,7 @@ const StarMatch = () => {
         </div>
         <div className="right">
           {utils.range(1, 9).map(number => {
-            return <Number key={number} number={number} />
+            return <PlayNumber key={number} number={number} />
           })}
         </div>
       </div>
