@@ -49,7 +49,8 @@ const StarMatch = () => {
   })
 
   const candidatesAreWrong = utils.sum(candidateNums) > stars
-  const gameIsDone = availableNums.length === 0
+  const gameIsWon = availableNums.length === 0
+  const gameIsLost = secondsLeft === 0
 
   const resetGame = () => {
     setStars(utils.random(1, 9))
@@ -94,7 +95,7 @@ const StarMatch = () => {
       </div>
       <div className="body">
         <div className="left">
-          {gameIsDone ? (
+          {gameIsWon ? (
             <PlayAgain onClick={resetGame} />
           ) : (
             <StarsDisplay count={stars} />
