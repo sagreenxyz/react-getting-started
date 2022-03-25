@@ -46,7 +46,7 @@ const StarMatch = () => {
   const [secondsLeft, setSecondsLeft] = useState(10)
 
   useEffect(() => {
-    if (secondsLeft > 0) {
+    if (secondsLeft > 0 && availableNums.length > 0) {
       const timerId = setTimeout(() => {
         setSecondsLeft(secondsLeft - 1)
       }, 1000)
