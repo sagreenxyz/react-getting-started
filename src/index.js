@@ -6,7 +6,7 @@ import colors from './config.js'
 // STAR MATCH - Starting Template
 
 const StarMatch = () => {
-  const stars = 9
+  const stars = utils.random(1, 9)
   return (
     <div className="game">
       <div className="help">
