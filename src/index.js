@@ -40,11 +40,10 @@ const StarMatch = () => {
   const [secondsLeft, setSecondsLeft] = useState(10)
 
   useEffect(() => {
-    setTimeout(() => {
-      if (secondsLeft > 0) {
-        setSecondsLeft(secondsLeft - 1)
-      }
-    }, 1000)
+    console.log('Done rendering')
+    return () => {
+      console.log('Component is going to rerender')
+    }
   })
 
   const candidatesAreWrong = utils.sum(candidateNums) > stars
