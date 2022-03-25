@@ -14,9 +14,14 @@ const StarsDisplay = (props) => {
 }
 
 const PlayNumber = (props) => {
-  return <button className="number" onClick={() => console.log('PlayNumber', props.number)}>
-    {props.number}
-  </button>
+  return (
+    <button
+      className="number"
+      onClick={() => console.log('PlayNumber', props.number)}
+    >
+      {props.number}
+    </button>
+  )
 }
 
 const StarMatch = () => {
@@ -34,7 +39,12 @@ const StarMatch = () => {
         </div>
         <div className="right">
           {utils.range(1, 9).map(number => {
-            return <PlayNumber key={number} number={number} />
+            return (
+              <PlayNumber
+                key={number}
+                number={number}
+              />
+            )
           })}
         </div>
       </div>
