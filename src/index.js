@@ -69,7 +69,11 @@ const StarMatch = () => {
       </div>
       <div className="body">
         <div className="left">
-          <StarsDisplay count={stars} />
+          {availableNums.length === 0 ? (
+            <PlayAgain />
+          ) : (
+            <StarsDisplay count={stars} />
+          )}
         </div>
         <div className="right">
           {utils.range(1, 9).map(number => {
