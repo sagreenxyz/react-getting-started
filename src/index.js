@@ -54,7 +54,7 @@ const useGameState = () => {
     }
   })
 
-  const setGameState = () => {
+  const setGameState = (newCandidateNums) => {
     if (utils.sum(newCandidateNums) !== stars) {
       setCandidateNums(newCandidateNums)
     } else {
