@@ -4,7 +4,9 @@ import utils from './utils.js'
 import colors from './config.js'
 
 const PlayNumber = (props) => {
-  return <button className="number">{props.number}</button>
+  return <button className="number" onClick={() => console.log(props.number)}>
+    {props.number}
+  </button>
 }
 
 const StarMatch = () => {
