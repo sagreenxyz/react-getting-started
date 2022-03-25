@@ -39,7 +39,7 @@ const PlayAgain = (props) => {
   )
 }
 
-const StarMatch = () => {
+const Game = () => {
   const [stars, setStars] = useState(utils.random(1, 9))
   const [availableNums, setAvailableNums] = useState(utils.range(1, 9))
   const [candidateNums, setCandidateNums] = useState([])
@@ -126,6 +126,10 @@ const StarMatch = () => {
     </div>
   );
 };
+
+const StarMatch = () => {
+  return <Game />
+}
 
 ReactDOM.render(
   <StarMatch />,
