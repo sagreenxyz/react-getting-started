@@ -6,6 +6,7 @@ import colors from './config.js'
 // STAR MATCH - Starting Template
 
 const StarMatch = () => {
+  const stars = 5
   return (
     <div className="game">
       <div className="help">
@@ -13,15 +14,9 @@ const StarMatch = () => {
       </div>
       <div className="body">
         <div className="left">
-          <div className="star" />
-          <div className="star" />
-          <div className="star" />
-          <div className="star" />
-          <div className="star" />
-          <div className="star" />
-          <div className="star" />
-          <div className="star" />
-          <div className="star" />
+          {utils.range(1, stars).map(starId => {
+            return <div key={starId} className="star" />
+          })}
         </div>
         <div className="right">
           <button className="number">1</button>
