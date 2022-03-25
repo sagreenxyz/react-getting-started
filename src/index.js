@@ -31,6 +31,7 @@ const StarMatch = () => {
   const [candidateNums, setCandidateNums] = useState([])
 
   const candidatesAreWrong = utils.sum(candidateNums) > stars
+  const gameIsDone = availableNums.length === 0
 
   const numberStatus = (number) => {
     if (!availableNums.includes(number)) {
@@ -69,7 +70,7 @@ const StarMatch = () => {
       </div>
       <div className="body">
         <div className="left">
-          {availableNums.length === 0 ? (
+          {gameIsDone ? (
             <PlayAgain />
           ) : (
             <StarsDisplay count={stars} />
