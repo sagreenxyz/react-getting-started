@@ -30,7 +30,7 @@ const PlayAgain = (props) => {
     <div className="game-done">
       <div
         className="message"
-        style = {{color: props.gameStatus === 'lost' ? 'red' : 'green'}}
+        style={{ color: props.gameStatus === 'lost' ? 'red' : 'green' }}
       >
         {props.gameStatus === 'lost' ? 'Game Over' : 'Nice!'}
       </div>
@@ -39,9 +39,7 @@ const PlayAgain = (props) => {
   )
 }
 
-
-
-const Game = (props) => {
+const useGameState = () => {
   // const [stars, setStars] = useState(utils.random(1, 9))
   // const [availableNums, setAvailableNums] = useState(utils.range(1, 9))
   // const [candidateNums, setCandidateNums] = useState([])
@@ -55,6 +53,21 @@ const Game = (props) => {
   //     return () => clearTimeout(timerId)
   //   }
   // })
+
+  // if (utils.sum(newCandidateNums) !== stars) {
+  //   setCandidateNums(newCandidateNums)
+  // } else {
+  //   const newAvailableNums = availableNums.filter(
+  //     n => !newCandidateNums.includes(n)
+  //   )
+  //   setStars(utils.randomSumIn(newAvailableNums, 9))
+  //   setAvailableNums(newAvailableNums)
+  //   setCandidateNums([])
+  // }
+}
+
+const Game = (props) => {
+
 
   const candidatesAreWrong = utils.sum(candidateNums) > stars
   const gameStatus = availableNums.length === 0
@@ -80,16 +93,6 @@ const Game = (props) => {
       currentStatus === 'available'
         ? candidateNums.concat(number)
         : candidateNums.filter(cn => cn !== number)
-    // if (utils.sum(newCandidateNums) !== stars) {
-    //   setCandidateNums(newCandidateNums)
-    // } else {
-    //   const newAvailableNums = availableNums.filter(
-    //     n => !newCandidateNums.includes(n)
-    //   )
-    //   setStars(utils.randomSumIn(newAvailableNums, 9))
-    //   setAvailableNums(newAvailableNums)
-    //   setCandidateNums([])
-    // }
   }
 
   return (
