@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import utils from './utils.js'
 import colors from './config.js'
@@ -38,6 +38,9 @@ const StarMatch = () => {
   const [availableNums, setAvailableNums] = useState(utils.range(1, 9))
   const [candidateNums, setCandidateNums] = useState([])
   const [secondsLeft, setSecondsLeft] = useState(10)
+  useEffect(() => {
+    console.log('Rendered...')
+  })
 
   const candidatesAreWrong = utils.sum(candidateNums) > stars
   const gameIsDone = availableNums.length === 0
