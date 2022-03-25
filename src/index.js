@@ -17,6 +17,7 @@ const PlayNumber = (props) => {
   return (
     <button
       className="number"
+      style={{backgroundColor: colors[props.status]}}
       onClick={() => console.log('PlayNumber', props.number)}
     >
       {props.number}
