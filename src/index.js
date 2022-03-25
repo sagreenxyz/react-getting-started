@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+function Hello() {
+  return <div>Hello World!</div>
+}
+
 ReactDOM.render(
-  <React.StrictMode>
-      {Math.random()}
-  </React.StrictMode>,
+  <Hello />,
   document.getElementById('root')
 );
