@@ -4,7 +4,7 @@ import utils from './utils.js'
 import colors from './config.js'
 
 const PlayNumber = (props) => {
-  return <button className="number" onClick={() => console.log(props.number)}>
+  return <button className="number" onClick={() => console.log('PlayNumber', props.number)}>
     {props.number}
   </button>
 }
