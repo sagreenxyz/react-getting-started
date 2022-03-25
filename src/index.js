@@ -28,6 +28,12 @@ const PlayNumber = (props) => {
 const PlayAgain = (props) => {
   return (
     <div className="game-done">
+      <div
+        className="message"
+        style = {{color: props.gameStatus === 'lost' ? 'red' : 'green'}}
+      >
+        {props.gameStatus === 'lost' ? 'Game Over' : 'Nice!'}
+      </div>
       <button onClick={props.onClick}>Play Again</button>
     </div>
   )
@@ -98,7 +104,7 @@ const StarMatch = () => {
       <div className="body">
         <div className="left">
           {gameStatus !== 'active' ? (
-            <PlayAgain onClick={resetGame} />
+            <PlayAgain onClick={resetGame} gameStatus={gameStatus} />
           ) : (
             <StarsDisplay count={stars} />
           )}
