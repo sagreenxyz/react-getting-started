@@ -39,7 +39,7 @@ const PlayAgain = (props) => {
   )
 }
 
-const Game = () => {
+const Game = (props) => {
   const [stars, setStars] = useState(utils.random(1, 9))
   const [availableNums, setAvailableNums] = useState(utils.range(1, 9))
   const [candidateNums, setCandidateNums] = useState([])
@@ -98,7 +98,7 @@ const Game = () => {
       <div className="body">
         <div className="left">
           {gameStatus !== 'active' ? (
-            <PlayAgain onClick={resetGame} gameStatus={gameStatus} />
+            <PlayAgain onClick={props.startNewGame} gameStatus={gameStatus} />
           ) : (
             <StarsDisplay count={stars} />
           )}
@@ -122,7 +122,8 @@ const Game = () => {
 };
 
 const StarMatch = () => {
-  return <Game />
+  const [gameId, setGameId] = useState(1)
+  return <Game key={gameId} startNewGame={() => setGameId(gameId + 1)} />
 }
 
 ReactDOM.render(
