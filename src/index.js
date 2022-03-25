@@ -40,9 +40,11 @@ const StarMatch = () => {
   const [secondsLeft, setSecondsLeft] = useState(10)
 
   useEffect(() => {
-    console.log('Done rendering')
-    return () => {
-      console.log('Component is going to rerender')
+    if (secondsLeft > 0) {
+      const timerId = setTimeout(() => {
+        setSecondsLeft(secondsLeft - 1)
+      }, 1000)
+      return () => clearTimeout(timerId)
     }
   })
 
