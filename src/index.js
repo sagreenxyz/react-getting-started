@@ -38,9 +38,12 @@ const StarMatch = () => {
   const [availableNums, setAvailableNums] = useState(utils.range(1, 9))
   const [candidateNums, setCandidateNums] = useState([])
   const [secondsLeft, setSecondsLeft] = useState(10)
+
   useEffect(() => {
     setTimeout(() => {
-      setSecondsLeft(secondsLeft - 1)
+      if (secondsLeft > 0) {
+        setSecondsLeft(secondsLeft - 1)
+      }
     }, 1000)
   })
 
