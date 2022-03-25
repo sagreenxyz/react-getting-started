@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import utils from './utils.js'
 import colors from './config.js'
 
-// STAR MATCH - Starting Template
-
 const StarMatch = () => {
   const [stars, setStars] = useState(utils.random(1, 9))
   return (
