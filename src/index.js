@@ -66,11 +66,11 @@ const useGameState = () => {
       setCandidateNums([])
     }
   }
+
+  return { stars, availableNums, candidateNums, secondsLeft, setGameState }
 }
 
 const Game = (props) => {
-
-
   const candidatesAreWrong = utils.sum(candidateNums) > stars
   const gameStatus = availableNums.length === 0
     ? 'won'
