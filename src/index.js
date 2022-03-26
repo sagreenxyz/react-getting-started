@@ -71,6 +71,14 @@ const useGameState = () => {
 }
 
 const Game = (props) => {
+  const {
+    stars,
+    availableNums,
+    candidateNums,
+    secondsLeft,
+    setGameState
+  } = useGameState()
+
   const candidatesAreWrong = utils.sum(candidateNums) > stars
   const gameStatus = availableNums.length === 0
     ? 'won'
@@ -95,6 +103,8 @@ const Game = (props) => {
       currentStatus === 'available'
         ? candidateNums.concat(number)
         : candidateNums.filter(cn => cn !== number)
+
+    setGameState(newCandidateNums)
   }
 
   return (
